@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MullerUltraLight.ttf</string>
+		<string>MullerThin.ttf</string>
+		<string>MullerRegular.ttf</string>
+		<string>MullerMedium.ttf</string>
+		<string>MullerLight.ttf</string>
+		<string>MullerBold.ttf</string>
+		<string>MullerExtraBold.ttf</string>
+	</array>
+</dict>
+</plist>

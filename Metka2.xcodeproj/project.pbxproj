@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8375904E2CF11A020027BC2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 837590482CF11A020027BC2B /* Preview Assets.xcassets */; };
+		8375904F2CF11A020027BC2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8375904A2CF11A020027BC2B /* Assets.xcassets */; };
+		837590502CF11A020027BC2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375904B2CF11A020027BC2B /* ContentView.swift */; };
+		837590512CF11A020027BC2B /* Metka2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375904C2CF11A020027BC2B /* Metka2App.swift */; };
+		837590552CF11A9B0027BC2B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590542CF11A9B0027BC2B /* MainView.swift */; };
+		837590592CF11AEE0027BC2B /* Env_Nav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590582CF11AEE0027BC2B /* Env_Nav.swift */; };
+		8375905B2CF11B2B0027BC2B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375905A2CF11B2B0027BC2B /* ProfileView.swift */; };
+		8375905D2CF11B420027BC2B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375905C2CF11B420027BC2B /* MapView.swift */; };
+		8375905F2CF11B5D0027BC2B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375905E2CF11B5D0027BC2B /* SearchView.swift */; };
+		837590622CF11BCE0027BC2B /* UC_Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590612CF11BCE0027BC2B /* UC_Navigation.swift */; };
+		837590642CF11C590027BC2B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590632CF11C590027BC2B /* Constants.swift */; };
+		837590672CF1204C0027BC2B /* MapsRedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590662CF1204C0027BC2B /* MapsRedView.swift */; };
+		837590692CF121E40027BC2B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590682CF121E40027BC2B /* LoginView.swift */; };
+		837590A92CF12E710027BC2B /* MullerThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837590A32CF12E710027BC2B /* MullerThin.ttf */; };
+		837590AC2CF12E710027BC2B /* MullerExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837590972CF12E710027BC2B /* MullerExtraBold.ttf */; };
+		837590AF2CF12E710027BC2B /* MullerBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837590952CF12E710027BC2B /* MullerBold.ttf */; };
+		837590B32CF12E710027BC2B /* MullerRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837590A12CF12E710027BC2B /* MullerRegular.ttf */; };
+		837590B52CF12E710027BC2B /* MullerLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8375909D2CF12E710027BC2B /* MullerLight.ttf */; };
+		837590B92CF12E710027BC2B /* MullerUltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837590A52CF12E710027BC2B /* MullerUltraLight.ttf */; };
+		837590BA2CF12E710027BC2B /* MullerMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8375909F2CF12E710027BC2B /* MullerMedium.ttf */; };
+		837590BE2CF13E580027BC2B /* Ext_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590BD2CF13E580027BC2B /* Ext_View.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		837590372CF119F90027BC2B /* Metka2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metka2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		837590482CF11A020027BC2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8375904A2CF11A020027BC2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8375904B2CF11A020027BC2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8375904C2CF11A020027BC2B /* Metka2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metka2App.swift; sourceTree = "<group>"; };
+		837590542CF11A9B0027BC2B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		837590582CF11AEE0027BC2B /* Env_Nav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env_Nav.swift; sourceTree = "<group>"; };
+		8375905A2CF11B2B0027BC2B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8375905C2CF11B420027BC2B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		8375905E2CF11B5D0027BC2B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		837590612CF11BCE0027BC2B /* UC_Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UC_Navigation.swift; sourceTree = "<group>"; };
+		837590632CF11C590027BC2B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		837590662CF1204C0027BC2B /* MapsRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsRedView.swift; sourceTree = "<group>"; };
+		837590682CF121E40027BC2B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		837590952CF12E710027BC2B /* MullerBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MullerBold.ttf; sourceTree = "<group>"; };
+		837590972CF12E710027BC2B /* MullerExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MullerExtraBold.ttf; sourceTree = "<group>"; };
+		8375909D2CF12E710027BC2B /* MullerLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MullerLight.ttf; sourceTree = "<group>"; };
+		8375909F2CF12E710027BC2B /* MullerMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MullerMedium.ttf; sourceTree = "<group>"; };
+		837590A12CF12E710027BC2B /* MullerRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MullerRegular.ttf; sourceTree = "<group>"; };
+		837590A32CF12E710027BC2B /* MullerThin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MullerThin.ttf; sourceTree = "<group>"; };
+		837590A52CF12E710027BC2B /* MullerUltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MullerUltraLight.ttf; sourceTree = "<group>"; };
+		837590BB2CF12ED90027BC2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		837590BD2CF13E580027BC2B /* Ext_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_View.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		837590342CF119F90027BC2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8375902E2CF119F90027BC2B = {
+			isa = PBXGroup;
+			children = (
+				8375904D2CF11A020027BC2B /* Metka2 */,
+				837590382CF119F90027BC2B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		837590382CF119F90027BC2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				837590372CF119F90027BC2B /* Metka2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		837590492CF11A020027BC2B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				837590482CF11A020027BC2B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8375904D2CF11A020027BC2B /* Metka2 */ = {
+			isa = PBXGroup;
+			children = (
+				837590BC2CF13E420027BC2B /* Ext */,
+				837590BB2CF12ED90027BC2B /* Info.plist */,
+				8375904B2CF11A020027BC2B /* ContentView.swift */,
+				8375904C2CF11A020027BC2B /* Metka2App.swift */,
+				837590522CF11A510027BC2B /* View */,
+				837590602CF11BB30027BC2B /* UC */,
+				837590532CF11A650027BC2B /* Helpers */,
+				837590562CF11AB10027BC2B /* Env */,
+				837590492CF11A020027BC2B /* Preview Content */,
+			);
+			path = Metka2;
+			sourceTree = "<group>";
+		};
+		837590522CF11A510027BC2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				837590542CF11A9B0027BC2B /* MainView.swift */,
+				8375905A2CF11B2B0027BC2B /* ProfileView.swift */,
+				8375905C2CF11B420027BC2B /* MapView.swift */,
+				8375905E2CF11B5D0027BC2B /* SearchView.swift */,
+				837590682CF121E40027BC2B /* LoginView.swift */,
+				837590652CF11E8B0027BC2B /* Maps */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		837590532CF11A650027BC2B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8375906A2CF127880027BC2B /* Fonts */,
+				837590632CF11C590027BC2B /* Constants.swift */,
+				8375904A2CF11A020027BC2B /* Assets.xcassets */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		837590562CF11AB10027BC2B /* Env */ = {
+			isa = PBXGroup;
+			children = (
+				837590582CF11AEE0027BC2B /* Env_Nav.swift */,
+			);
+			path = Env;
+			sourceTree = "<group>";
+		};
+		837590602CF11BB30027BC2B /* UC */ = {
+			isa = PBXGroup;
+			children = (
+				837590612CF11BCE0027BC2B /* UC_Navigation.swift */,
+			);
+			path = UC;
+			sourceTree = "<group>";
+		};
+		837590652CF11E8B0027BC2B /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				837590662CF1204C0027BC2B /* MapsRedView.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		8375906A2CF127880027BC2B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				837590952CF12E710027BC2B /* MullerBold.ttf */,
+				837590972CF12E710027BC2B /* MullerExtraBold.ttf */,
+				8375909D2CF12E710027BC2B /* MullerLight.ttf */,
+				8375909F2CF12E710027BC2B /* MullerMedium.ttf */,
+				837590A12CF12E710027BC2B /* MullerRegular.ttf */,
+				837590A32CF12E710027BC2B /* MullerThin.ttf */,
+				837590A52CF12E710027BC2B /* MullerUltraLight.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		837590BC2CF13E420027BC2B /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				837590BD2CF13E580027BC2B /* Ext_View.swift */,
+			);
+			path = Ext;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		837590362CF119F90027BC2B /* Metka2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 837590452CF119FB0027BC2B /* Build configuration list for PBXNativeTarget "Metka2" */;
+			buildPhases = (
+				837590332CF119F90027BC2B /* Sources */,
+				837590342CF119F90027BC2B /* Frameworks */,
+				837590352CF119F90027BC2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Metka2;
+			packageProductDependencies = (
+			);
+			productName = Metka2;
+			productReference = 837590372CF119F90027BC2B /* Metka2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8375902F2CF119F90027BC2B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					837590362CF119F90027BC2B = {
+						CreatedOnToolsVersion = 16.1;
+					};
+				};
+			};
+			buildConfigurationList = 837590322CF119F90027BC2B /* Build configuration list for PBXProject "Metka2" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8375902E2CF119F90027BC2B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 837590382CF119F90027BC2B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				837590362CF119F90027BC2B /* Metka2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		837590352CF119F90027BC2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				837590A92CF12E710027BC2B /* MullerThin.ttf in Resources */,
+				837590AC2CF12E710027BC2B /* MullerExtraBold.ttf in Resources */,
+				837590AF2CF12E710027BC2B /* MullerBold.ttf in Resources */,
+				837590B32CF12E710027BC2B /* MullerRegular.ttf in Resources */,
+				837590B52CF12E710027BC2B /* MullerLight.ttf in Resources */,
+				837590B92CF12E710027BC2B /* MullerUltraLight.ttf in Resources */,
+				837590BA2CF12E710027BC2B /* MullerMedium.ttf in Resources */,
+				8375904E2CF11A020027BC2B /* Preview Assets.xcassets in Resources */,
+				8375904F2CF11A020027BC2B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		837590332CF119F90027BC2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				837590502CF11A020027BC2B /* ContentView.swift in Sources */,
+				8375905D2CF11B420027BC2B /* MapView.swift in Sources */,
+				837590592CF11AEE0027BC2B /* Env_Nav.swift in Sources */,
+				8375905F2CF11B5D0027BC2B /* SearchView.swift in Sources */,
+				837590BE2CF13E580027BC2B /* Ext_View.swift in Sources */,
+				8375905B2CF11B2B0027BC2B /* ProfileView.swift in Sources */,
+				837590622CF11BCE0027BC2B /* UC_Navigation.swift in Sources */,
+				837590552CF11A9B0027BC2B /* MainView.swift in Sources */,
+				837590512CF11A020027BC2B /* Metka2App.swift in Sources */,
+				837590692CF121E40027BC2B /* LoginView.swift in Sources */,
+				837590642CF11C590027BC2B /* Constants.swift in Sources */,
+				837590672CF1204C0027BC2B /* MapsRedView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		837590432CF119FB0027BC2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		837590442CF119FB0027BC2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		837590462CF119FB0027BC2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Metka2/Preview Content\"";
+				DEVELOPMENT_TEAM = 4923GA7LPV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Metka2/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = VladislavAndreev.Metka2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		837590472CF119FB0027BC2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Metka2/Preview Content\"";
+				DEVELOPMENT_TEAM = 4923GA7LPV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Metka2/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = VladislavAndreev.Metka2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		837590322CF119F90027BC2B /* Build configuration list for PBXProject "Metka2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				837590432CF119FB0027BC2B /* Debug */,
+				837590442CF119FB0027BC2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		837590452CF119FB0027BC2B /* Build configuration list for PBXNativeTarget "Metka2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				837590462CF119FB0027BC2B /* Debug */,
+				837590472CF119FB0027BC2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8375902F2CF119F90027BC2B /* Project object */;
+}

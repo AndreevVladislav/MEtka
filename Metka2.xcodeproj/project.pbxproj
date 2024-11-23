@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8368E6212CF20C3100F52DDE /* TecniqueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8368E6202CF20C3100F52DDE /* TecniqueManager.swift */; };
 		8375904E2CF11A020027BC2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 837590482CF11A020027BC2B /* Preview Assets.xcassets */; };
 		8375904F2CF11A020027BC2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8375904A2CF11A020027BC2B /* Assets.xcassets */; };
 		837590502CF11A020027BC2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375904B2CF11A020027BC2B /* ContentView.swift */; };
@@ -28,16 +29,31 @@
 		837590B92CF12E710027BC2B /* MullerUltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 837590A52CF12E710027BC2B /* MullerUltraLight.ttf */; };
 		837590BA2CF12E710027BC2B /* MullerMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8375909F2CF12E710027BC2B /* MullerMedium.ttf */; };
 		837590BE2CF13E580027BC2B /* Ext_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590BD2CF13E580027BC2B /* Ext_View.swift */; };
-		837590C02CF15BCC0027BC2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 837590BF2CF15BCC0027BC2B /* GoogleService-Info.plist */; };
 		837590C42CF15D7B0027BC2B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 837590C32CF15D7B0027BC2B /* FirebaseAnalytics */; };
 		837590C62CF15D7B0027BC2B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 837590C52CF15D7B0027BC2B /* FirebaseAuth */; };
 		837590C82CF15D7B0027BC2B /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 837590C72CF15D7B0027BC2B /* FirebaseCore */; };
 		837590CA2CF15D7B0027BC2B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 837590C92CF15D7B0027BC2B /* FirebaseDatabase */; };
 		837590CC2CF15FE90027BC2B /* ShakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590CB2CF15FE90027BC2B /* ShakeView.swift */; };
 		837590CE2CF161390027BC2B /* ShakeGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590CD2CF161390027BC2B /* ShakeGesture.swift */; };
+		837590D02CF167450027BC2B /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590CF2CF167450027BC2B /* NFCReader.swift */; };
+		837590D22CF177F70027BC2B /* MyTechnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590D12CF177F70027BC2B /* MyTechnique.swift */; };
+		837590D42CF178210027BC2B /* MyOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590D32CF178210027BC2B /* MyOffice.swift */; };
+		837590D92CF17E090027BC2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 837590D82CF17E090027BC2B /* GoogleService-Info.plist */; };
+		837590DB2CF18D870027BC2B /* AdminkaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590DA2CF18D870027BC2B /* AdminkaView.swift */; };
+		837590DE2CF195560027BC2B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590DD2CF195560027BC2B /* UserModel.swift */; };
+		837590E02CF1960C0027BC2B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 837590DF2CF1960C0027BC2B /* FirebaseFirestore */; };
+		837590E32CF196920027BC2B /* APIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590E22CF196920027BC2B /* APIUtils.swift */; };
+		837590E52CF1A67A0027BC2B /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590E42CF1A67A0027BC2B /* UserInfoManager.swift */; };
+		837590E72CF1BD030027BC2B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590E62CF1BD030027BC2B /* LoadingView.swift */; };
+		837590EB2CF1C0D00027BC2B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 837590EA2CF1C0D00027BC2B /* Lottie */; };
+		837590ED2CF1C1190027BC2B /* Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 837590EC2CF1C1190027BC2B /* Animation.json */; };
+		837590EF2CF1CEBE0027BC2B /* AnimationLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = 837590EE2CF1CEBE0027BC2B /* AnimationLoading.json */; };
+		837590F12CF1EF8C0027BC2B /* UC_TechniqueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590F02CF1EF8C0027BC2B /* UC_TechniqueItem.swift */; };
+		837590F32CF1EFB10027BC2B /* ModelTechnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590F22CF1EFB10027BC2B /* ModelTechnique.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8368E6202CF20C3100F52DDE /* TecniqueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecniqueManager.swift; sourceTree = "<group>"; };
 		837590372CF119F90027BC2B /* Metka2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metka2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		837590482CF11A020027BC2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8375904A2CF11A020027BC2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,9 +77,22 @@
 		837590A52CF12E710027BC2B /* MullerUltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MullerUltraLight.ttf; sourceTree = "<group>"; };
 		837590BB2CF12ED90027BC2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		837590BD2CF13E580027BC2B /* Ext_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_View.swift; sourceTree = "<group>"; };
-		837590BF2CF15BCC0027BC2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		837590CB2CF15FE90027BC2B /* ShakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeView.swift; sourceTree = "<group>"; };
 		837590CD2CF161390027BC2B /* ShakeGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeGesture.swift; sourceTree = "<group>"; };
+		837590CF2CF167450027BC2B /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
+		837590D12CF177F70027BC2B /* MyTechnique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTechnique.swift; sourceTree = "<group>"; };
+		837590D32CF178210027BC2B /* MyOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOffice.swift; sourceTree = "<group>"; };
+		837590D72CF17B890027BC2B /* Metka2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Metka2.entitlements; sourceTree = "<group>"; };
+		837590D82CF17E090027BC2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		837590DA2CF18D870027BC2B /* AdminkaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminkaView.swift; sourceTree = "<group>"; };
+		837590DD2CF195560027BC2B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		837590E22CF196920027BC2B /* APIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUtils.swift; sourceTree = "<group>"; };
+		837590E42CF1A67A0027BC2B /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		837590E62CF1BD030027BC2B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		837590EC2CF1C1190027BC2B /* Animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Animation.json; sourceTree = "<group>"; };
+		837590EE2CF1CEBE0027BC2B /* AnimationLoading.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimationLoading.json; sourceTree = "<group>"; };
+		837590F02CF1EF8C0027BC2B /* UC_TechniqueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UC_TechniqueItem.swift; sourceTree = "<group>"; };
+		837590F22CF1EFB10027BC2B /* ModelTechnique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTechnique.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,18 +103,28 @@
 				837590C42CF15D7B0027BC2B /* FirebaseAnalytics in Frameworks */,
 				837590C82CF15D7B0027BC2B /* FirebaseCore in Frameworks */,
 				837590CA2CF15D7B0027BC2B /* FirebaseDatabase in Frameworks */,
+				837590E02CF1960C0027BC2B /* FirebaseFirestore in Frameworks */,
 				837590C62CF15D7B0027BC2B /* FirebaseAuth in Frameworks */,
+				837590EB2CF1C0D00027BC2B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8368E6242CF2257200F52DDE /* Adminka */ = {
+			isa = PBXGroup;
+			children = (
+				837590DA2CF18D870027BC2B /* AdminkaView.swift */,
+			);
+			path = Adminka;
+			sourceTree = "<group>";
+		};
 		8375902E2CF119F90027BC2B = {
 			isa = PBXGroup;
 			children = (
 				8375904D2CF11A020027BC2B /* Metka2 */,
-				837590BF2CF15BCC0027BC2B /* GoogleService-Info.plist */,
+				837590D82CF17E090027BC2B /* GoogleService-Info.plist */,
 				837590382CF119F90027BC2B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +148,9 @@
 		8375904D2CF11A020027BC2B /* Metka2 */ = {
 			isa = PBXGroup;
 			children = (
+				837590E12CF1967D0027BC2B /* API */,
+				837590DC2CF1953C0027BC2B /* Models */,
+				837590D72CF17B890027BC2B /* Metka2.entitlements */,
 				837590BC2CF13E420027BC2B /* Ext */,
 				837590BB2CF12ED90027BC2B /* Info.plist */,
 				8375904B2CF11A020027BC2B /* ContentView.swift */,
@@ -125,12 +167,15 @@
 		837590522CF11A510027BC2B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				837590E62CF1BD030027BC2B /* LoadingView.swift */,
 				837590542CF11A9B0027BC2B /* MainView.swift */,
+				837590682CF121E40027BC2B /* LoginView.swift */,
 				8375905A2CF11B2B0027BC2B /* ProfileView.swift */,
 				8375905C2CF11B420027BC2B /* MapView.swift */,
 				8375905E2CF11B5D0027BC2B /* SearchView.swift */,
-				837590682CF121E40027BC2B /* LoginView.swift */,
 				837590CB2CF15FE90027BC2B /* ShakeView.swift */,
+				837590D12CF177F70027BC2B /* MyTechnique.swift */,
+				837590D32CF178210027BC2B /* MyOffice.swift */,
 				837590652CF11E8B0027BC2B /* Maps */,
 				837590CD2CF161390027BC2B /* ShakeGesture.swift */,
 			);
@@ -140,9 +185,12 @@
 		837590532CF11A650027BC2B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				837590E82CF1BFCC0027BC2B /* Lottie */,
 				8375906A2CF127880027BC2B /* Fonts */,
 				837590632CF11C590027BC2B /* Constants.swift */,
 				8375904A2CF11A020027BC2B /* Assets.xcassets */,
+				837590CF2CF167450027BC2B /* NFCReader.swift */,
+				8368E6242CF2257200F52DDE /* Adminka */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -159,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				837590612CF11BCE0027BC2B /* UC_Navigation.swift */,
+				837590F02CF1EF8C0027BC2B /* UC_TechniqueItem.swift */,
 			);
 			path = UC;
 			sourceTree = "<group>";
@@ -193,6 +242,34 @@
 			path = Ext;
 			sourceTree = "<group>";
 		};
+		837590DC2CF1953C0027BC2B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				837590DD2CF195560027BC2B /* UserModel.swift */,
+				837590F22CF1EFB10027BC2B /* ModelTechnique.swift */,
+				837590E42CF1A67A0027BC2B /* UserInfoManager.swift */,
+				8368E6202CF20C3100F52DDE /* TecniqueManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		837590E12CF1967D0027BC2B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				837590E22CF196920027BC2B /* APIUtils.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		837590E82CF1BFCC0027BC2B /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				837590EC2CF1C1190027BC2B /* Animation.json */,
+				837590EE2CF1CEBE0027BC2B /* AnimationLoading.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +291,8 @@
 				837590C52CF15D7B0027BC2B /* FirebaseAuth */,
 				837590C72CF15D7B0027BC2B /* FirebaseCore */,
 				837590C92CF15D7B0027BC2B /* FirebaseDatabase */,
+				837590DF2CF1960C0027BC2B /* FirebaseFirestore */,
+				837590EA2CF1C0D00027BC2B /* Lottie */,
 			);
 			productName = Metka2;
 			productReference = 837590372CF119F90027BC2B /* Metka2.app */;
@@ -245,6 +324,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				837590C22CF15D7B0027BC2B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				837590E92CF1C0D00027BC2B /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 837590382CF119F90027BC2B /* Products */;
@@ -262,8 +342,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				837590A92CF12E710027BC2B /* MullerThin.ttf in Resources */,
+				837590EF2CF1CEBE0027BC2B /* AnimationLoading.json in Resources */,
+				837590D92CF17E090027BC2B /* GoogleService-Info.plist in Resources */,
 				837590AC2CF12E710027BC2B /* MullerExtraBold.ttf in Resources */,
-				837590C02CF15BCC0027BC2B /* GoogleService-Info.plist in Resources */,
+				837590ED2CF1C1190027BC2B /* Animation.json in Resources */,
 				837590AF2CF12E710027BC2B /* MullerBold.ttf in Resources */,
 				837590B32CF12E710027BC2B /* MullerRegular.ttf in Resources */,
 				837590B52CF12E710027BC2B /* MullerLight.ttf in Resources */,
@@ -282,6 +364,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				837590502CF11A020027BC2B /* ContentView.swift in Sources */,
+				837590D42CF178210027BC2B /* MyOffice.swift in Sources */,
+				837590DB2CF18D870027BC2B /* AdminkaView.swift in Sources */,
+				837590E72CF1BD030027BC2B /* LoadingView.swift in Sources */,
+				837590F12CF1EF8C0027BC2B /* UC_TechniqueItem.swift in Sources */,
 				8375905D2CF11B420027BC2B /* MapView.swift in Sources */,
 				837590CE2CF161390027BC2B /* ShakeGesture.swift in Sources */,
 				837590592CF11AEE0027BC2B /* Env_Nav.swift in Sources */,
@@ -289,9 +375,16 @@
 				837590BE2CF13E580027BC2B /* Ext_View.swift in Sources */,
 				8375905B2CF11B2B0027BC2B /* ProfileView.swift in Sources */,
 				837590622CF11BCE0027BC2B /* UC_Navigation.swift in Sources */,
+				837590D22CF177F70027BC2B /* MyTechnique.swift in Sources */,
+				837590D02CF167450027BC2B /* NFCReader.swift in Sources */,
+				837590F32CF1EFB10027BC2B /* ModelTechnique.swift in Sources */,
 				837590552CF11A9B0027BC2B /* MainView.swift in Sources */,
 				837590512CF11A020027BC2B /* Metka2App.swift in Sources */,
+				837590E52CF1A67A0027BC2B /* UserInfoManager.swift in Sources */,
+				8368E6212CF20C3100F52DDE /* TecniqueManager.swift in Sources */,
 				837590692CF121E40027BC2B /* LoginView.swift in Sources */,
+				837590DE2CF195560027BC2B /* UserModel.swift in Sources */,
+				837590E32CF196920027BC2B /* APIUtils.swift in Sources */,
 				837590642CF11C590027BC2B /* Constants.swift in Sources */,
 				837590CC2CF15FE90027BC2B /* ShakeView.swift in Sources */,
 				837590672CF1204C0027BC2B /* MapsRedView.swift in Sources */,
@@ -425,6 +518,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Metka2/Metka2.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Metka2/Preview Content\"";
@@ -432,19 +527,21 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Metka2/Info.plist;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Приложение использует NFC для чтения меток";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = VladislavAndreev.Metka2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VladislavAndreev.Metka2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -460,6 +557,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Metka2/Metka2.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Metka2/Preview Content\"";
@@ -467,19 +566,21 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Metka2/Info.plist;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Приложение использует NFC для чтения меток";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = VladislavAndreev.Metka2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VladislavAndreev.Metka2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -522,6 +623,14 @@
 				minimumVersion = 11.5.0;
 			};
 		};
+		837590E92CF1C0D00027BC2B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -544,6 +653,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 837590C22CF15D7B0027BC2B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		837590DF2CF1960C0027BC2B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 837590C22CF15D7B0027BC2B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		837590EA2CF1C0D00027BC2B /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 837590E92CF1C0D00027BC2B /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Lottie
 
 struct LoginView: View {
     /// Поля ввода
@@ -19,18 +20,24 @@ struct LoginView: View {
     @FocusState private var focusState: E_Field?
     
     /// Значение поля ввода "Password"
-    @State private var string_Password: String = ""
+    @State private var string_Password: String = "securePassword123"
     
     /// Ошибка поля ввода "Password"
     @State private var flag_PasswordError: Bool = false
     
     /// Значение поля ввода "Email"
-    @State private var string_Email: String = ""
+    @State private var string_Email: String = "test@example.com"
     
     /// Ошибка поля ввода "Email"
     @State private var flag_EmailError: Bool = false
     
-        @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) private var dismiss
+    
+    private let apiUtils = ApiUtils()
+    
+    @State private var flag_showMain = false
+    
+    @State private var flag_Loading = false
     
     var body: some View {
         ZStack {
@@ -38,13 +45,13 @@ struct LoginView: View {
             Consts.Colors.Green_11
                 .ignoresSafeArea()
             
-            VStack {
-                Spacer()
-                Consts.Colors.Gray_C9
-                    .frame(height: 300)
-                    .frame(maxWidth: .infinity)
-            }
-            .ignoresSafeArea()
+//            VStack {
+//                Spacer()
+//                Consts.Colors.Gray_C9
+//                    .frame(height: 300)
+//                    .frame(maxWidth: .infinity)
+//            }
+//            .ignoresSafeArea()
             
             ScrollView(showsIndicators: false) {
                 VStack {
@@ -156,7 +163,40 @@ struct LoginView: View {
                                 }
                             
                             Button(action: {
-                               dismiss()
+                                self.flag_Loading = true
+                                self.apiUtils.loginUserAndFetchData(email: self.string_Email, password: self.string_Password) { result in
+                                    switch result {
+                                    case .success(let userModel):
+                                        print("Пользователь успешно авторизован и данные получены:")
+                                        self.apiUtils.saveUserIDToUserDefaults(UserInfo: UserInfo(
+                                            id: UUID(),
+                                            clientID: userModel.clientID,
+                                            avatar: userModel.avatar,
+                                            email: userModel.email,
+                                            position: userModel.position,
+                                            grade: userModel.grade,
+                                            cabinetID: userModel.cabinetID,
+                                            fio: userModel.fio,
+                                            officeID: userModel.officeID,
+                                            flag_isAdmin: userModel.flag_isAdmin),
+                                                                               key: "UserInfo")
+                                        
+                                        UserInfoManager.shared.clientID = userModel.clientID
+                                        UserInfoManager.shared.avatar = userModel.avatar
+                                        UserInfoManager.shared.email = userModel.email
+                                        UserInfoManager.shared.position = userModel.position
+                                        UserInfoManager.shared.grade = userModel.grade
+                                        UserInfoManager.shared.cabinetID = userModel.cabinetID
+                                        UserInfoManager.shared.fio = userModel.fio
+                                        UserInfoManager.shared.officeID = userModel.officeID
+                                        UserInfoManager.shared.flag_isAdmin = userModel.flag_isAdmin
+                                        flag_showMain = true
+                                        
+                                    case .failure(let error):
+                                        print("Ошибка при авторизации или получении данных: \(error.localizedDescription)")
+                                        self.flag_Loading = false
+                                    }
+                                }
                             }) {
                                 Text("Войти")
                                     .font(Font.custom(Consts.Fonts.Regular, size: 24))
@@ -191,8 +231,24 @@ struct LoginView: View {
                     .cornerRadius(22) // Закругление углов
                     .ignoresSafeArea()
                 }
+                
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .blur(radius: flag_Loading ? 5 : 0)
+            .animation(.easeInOut, value: flag_Loading)
+            if flag_Loading {
+                ZStack {
+                    Consts.Colors.Gray_C9.opacity(0.5)
+                        .ignoresSafeArea()
+                    LottieView(animation: .named("AnimationLoading"))
+                        .playbackMode(.playing(.toProgress(1, loopMode: .loop)))
+                }
+                .ignoresSafeArea()
+                .animation(.easeInOut, value: flag_Loading)
+            }
+        }
+        .fullScreenCover(isPresented: $flag_showMain) {
+            MainView()
         }
     }
         

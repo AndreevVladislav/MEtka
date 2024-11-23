@@ -15,8 +15,19 @@ struct Metka2App: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environmentObject(envNav) // Передача объекта в окружение
+//            if let data = UserDefaults.standard.data(forKey: "UserInfo") {
+//                
+//                MainView()
+//                    .environmentObject(envNav) // Передача объекта в окружение
+//            } else {
+//                LoginView()
+//                    .environmentObject(envNav) // Передача объекта в окружение
+//            }
+            
+            LoadingView()
+                .environmentObject(envNav)
+            
+            
         }
     }
 }

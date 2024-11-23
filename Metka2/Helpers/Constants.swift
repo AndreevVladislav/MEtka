@@ -58,6 +58,11 @@ public class Consts {
         
         public static let avatar: Image = Image("avatar");
         
+        public static let ic_logout: Image = Image("ic_logout");
+        
+        public static let ic_buttonBack: Image = Image("ic_buttonBack");
+        
+        
     }
     
     public struct Fonts {

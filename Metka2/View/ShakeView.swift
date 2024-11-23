@@ -7,15 +7,34 @@
 
 import Foundation
 import SwiftUI
+import CoreNFC
 
 struct ShakeView: View {
+    @StateObject private var nfcReader = NFCReader()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Consts.Colors.Gray_C9
+                .ignoresSafeArea()
+            VStack(spacing: 20) {
+                Text("NFC Считыватель")
+                    .font(.largeTitle)
+                    .padding()
+                
+                Text(nfcReader.message.isEmpty ? "Нет данных" : "Данные с метки: \(nfcReader.message)")
+                    .padding()
+                    .multilineTextAlignment(.center)
+                
+                Button("Начать сканирование") {
+                    nfcReader.startScanning()
+                }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+            }
+            .padding()
         }
-        .padding()
     }
 }
+

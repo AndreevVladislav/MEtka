@@ -12,5 +12,13 @@
 		<string>MullerBold.ttf</string>
 		<string>MullerExtraBold.ttf</string>
 	</array>
+	<key>com.apple.developer.nfc.readersession.felica.systemcodes</key>
+	<array>
+		<string></string>
+	</array>
+	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+	<array>
+		<string></string>
+	</array>
 </dict>
 </plist>

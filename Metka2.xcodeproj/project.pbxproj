@@ -50,6 +50,7 @@
 		837590EF2CF1CEBE0027BC2B /* AnimationLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = 837590EE2CF1CEBE0027BC2B /* AnimationLoading.json */; };
 		837590F12CF1EF8C0027BC2B /* UC_TechniqueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590F02CF1EF8C0027BC2B /* UC_TechniqueItem.swift */; };
 		837590F32CF1EFB10027BC2B /* ModelTechnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590F22CF1EFB10027BC2B /* ModelTechnique.swift */; };
+		83F1DEBB2CF28E1400C63623 /* NewProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1DEBA2CF28E1400C63623 /* NewProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		837590EE2CF1CEBE0027BC2B /* AnimationLoading.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimationLoading.json; sourceTree = "<group>"; };
 		837590F02CF1EF8C0027BC2B /* UC_TechniqueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UC_TechniqueItem.swift; sourceTree = "<group>"; };
 		837590F22CF1EFB10027BC2B /* ModelTechnique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTechnique.swift; sourceTree = "<group>"; };
+		83F1DEBA2CF28E1400C63623 /* NewProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,6 @@
 		8368E6242CF2257200F52DDE /* Adminka */ = {
 			isa = PBXGroup;
 			children = (
-				837590DA2CF18D870027BC2B /* AdminkaView.swift */,
 			);
 			path = Adminka;
 			sourceTree = "<group>";
@@ -171,6 +172,8 @@
 				837590542CF11A9B0027BC2B /* MainView.swift */,
 				837590682CF121E40027BC2B /* LoginView.swift */,
 				8375905A2CF11B2B0027BC2B /* ProfileView.swift */,
+				837590DA2CF18D870027BC2B /* AdminkaView.swift */,
+				83F1DEBA2CF28E1400C63623 /* NewProfileView.swift */,
 				8375905C2CF11B420027BC2B /* MapView.swift */,
 				8375905E2CF11B5D0027BC2B /* SearchView.swift */,
 				837590CB2CF15FE90027BC2B /* ShakeView.swift */,
@@ -386,6 +389,7 @@
 				837590DE2CF195560027BC2B /* UserModel.swift in Sources */,
 				837590E32CF196920027BC2B /* APIUtils.swift in Sources */,
 				837590642CF11C590027BC2B /* Constants.swift in Sources */,
+				83F1DEBB2CF28E1400C63623 /* NewProfileView.swift in Sources */,
 				837590CC2CF15FE90027BC2B /* ShakeView.swift in Sources */,
 				837590672CF1204C0027BC2B /* MapsRedView.swift in Sources */,
 			);

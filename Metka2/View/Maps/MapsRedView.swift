@@ -12,12 +12,15 @@ import SwiftUI
 // Главное представление карты офиса
 struct OfficeMapView: View {
     @State private var elements: [MapElement] = [] // Список элементов
+    @State private var elementsSave: [MapElement] = [] // Список элементов
     @State private var isAddingElement = false     // Флаг для добавления элемента
     @State private var selectedElement: MapElement? = nil // Элемент для редактирования
     @State private var scale: CGFloat = 1.0        // Текущий масштаб карты
     private let apiUtils = ApiUtils()
     
     @State private var flag_redMap = false
+    
+    @State private var showAlert = false
     
 
     var body: some View {
@@ -48,8 +51,10 @@ struct OfficeMapView: View {
                 .gesture(
                     DragGesture()
                         .onChanged { gesture in
-                            if let index = elements.firstIndex(where: { $0.id == element.id }) {
-                                elements[index].position = gesture.location
+                            if UserInfoManager.shared.flag_isAdmin == 1 && flag_redMap {
+                                if let index = elements.firstIndex(where: { $0.id == element.id }) {
+                                    elements[index].position = gesture.location
+                                }
                             }
                         }
                 )
@@ -83,6 +88,17 @@ struct OfficeMapView: View {
                                 .frame(width: 40, height: 40)
                                 .foregroundColor(Consts.Colors.Green_51)
                         }
+                        .padding(.bottom, 10)
+                        
+                        Button(action: {
+                            flag_redMap = true
+                            elementsSave = elements
+                        }) {
+                            Image(systemName: "square.and.pencil.circle")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .foregroundColor(Consts.Colors.Green_51)
+                        }
                     }
                     .padding()
                 }
@@ -91,53 +107,53 @@ struct OfficeMapView: View {
             }
 
             // Кнопка добавления элемента
+            
             VStack {
                 Spacer()
                 HStack {
-                    
-                    Button(action: {
-                        isAddingElement.toggle()
-                    }) {
-                        Text("Добавить элемент")
-                            .font(.headline)
-                            .foregroundColor(Consts.Colors.black)
-                            .padding()
-                            .background(Consts.Colors.Green_51)
-                            .cornerRadius(8)
+                    if UserInfoManager.shared.flag_isAdmin == 1 && flag_redMap {
+                        Button(action: {
+                            isAddingElement.toggle()
+                        }) {
+                            Text("Добавить")
+                                .font(.headline)
+                                .foregroundColor(Consts.Colors.black)
+                                .padding()
+                                .background(Consts.Colors.Green_51)
+                                .cornerRadius(8)
+                        }
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity)
                     
                     Button(action: {
-                        isAddingElement.toggle()
-                    }) {
-                        
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    
-                    Button(action: {
-                        let officeMap = OfficeMap(id: "customMapID123", elements: elements)
-                        self.apiUtils.saveOfficeMapToFirestore(map: officeMap) { result in
+                        self.apiUtils.getOfficeMapFromFirestore(mapID: "customMapID123") { result in
                             switch result {
-                            case .success:
-                                print("Карта успешно сохранена")
+                            case .success(let map):
+                                print("Карта получена: \(map)")
+                                elements = map.elements
                             case .failure(let error):
-                                print("Ошибка при сохранении карты: \(error.localizedDescription)")
+                                print("Ошибка при получении карты: \(error.localizedDescription)")
                             }
                         }
+                        
                     }) {
-                        Text("Сохранить карту")
-                            .font(.headline)
-                            .foregroundColor(Consts.Colors.black)
-                            .padding()
-                            .background(Consts.Colors.Green_51)
-                            .cornerRadius(8)
+                        Image(systemName: "arrow.clockwise.square.fill")
+                            .foregroundStyle(Consts.Colors.Green_51)
+                            .font(Font.system(size: 48))
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity)
+                    if UserInfoManager.shared.flag_isAdmin == 1 && flag_redMap {
+                        Button(action: {
+                            self.showAlert = true
+                        }) {
+                            Text("Сохранить")
+                                .font(.headline)
+                                .foregroundColor(Consts.Colors.black)
+                                .padding()
+                                .background(Consts.Colors.Green_51)
+                                .cornerRadius(8)
+                        }
+                    }
                 }
-                .padding(.bottom, 20)
+                .padding(.bottom, 50)
             }
         }
         .onAppear {
@@ -161,12 +177,40 @@ struct OfficeMapView: View {
 
         // Меню редактирования элемента
         .sheet(item: $selectedElement) { selectedElement in
-            if let index = elements.firstIndex(where: { $0.id == selectedElement.id }) {
-                EditElementView(element: $elements[index], onDelete: {
-                    elements.remove(at: index) // Удаляем элемент из списка
-                    self.selectedElement = nil // Закрываем редактор
-                })
+            if UserInfoManager.shared.flag_isAdmin == 1 && flag_redMap {
+                if let index = elements.firstIndex(where: { $0.id == selectedElement.id }) {
+                    EditElementView(element: $elements[index], onDelete: {
+                        elements.remove(at: index) // Удаляем элемент из списка
+                        self.selectedElement = nil // Закрываем редактор
+                    })
+                }
+            } else {
+                VStack {
+                    Text("hgjvghvjh")
+                }
             }
+        }
+        .alert("Сохранить изменения?", isPresented: $showAlert) {
+                   Button("да") {
+                       let officeMap = OfficeMap(id: "customMapID123", elements: elements)
+                       self.apiUtils.saveOfficeMapToFirestore(map: officeMap) { result in
+                           switch result {
+                           case .success:
+                               print("Карта успешно сохранена")
+                           case .failure(let error):
+                               print("Ошибка при сохранении карты: \(error.localizedDescription)")
+                           }
+                       }
+                       self.showAlert = false
+                       self.flag_redMap = false
+                   }
+                   Button("нет", role: .cancel) { // Кнопка с ролью "отмена"
+                       self.elements = self.elementsSave
+                       self.showAlert = false
+                       self.flag_redMap = false
+                   }
+        } message: {
+            Text("")
         }
     }
 

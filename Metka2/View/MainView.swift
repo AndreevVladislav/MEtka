@@ -14,6 +14,8 @@ struct MainView: View {
     
     @State private var flag_showLogin = false
     
+    @State private var flag_showShakeView = false
+    
     var body: some View {
         ZStack {
             VStack {
@@ -38,11 +40,20 @@ struct MainView: View {
         .onAppear {
             self.env_Nav.Tab_Selection = 0 // Устанавливаем начальный таб
             self.flag_showLogin = false
+            self.flag_showShakeView = false
         }
         .background(Consts.Colors.Gray_C9)
         .fullScreenCover(isPresented: $flag_showLogin) {
             LoginView()
         }
+        .sheet(isPresented: $flag_showShakeView) {
+            ShakeView()
+        }
+        .modifier(ShakeGestureHandler {
+            flag_showShakeView = true
+        })
+                  
+        
     }
 }
 

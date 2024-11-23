@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 
-import Foundation
-import SwiftUI
 
 // Главное представление карты офиса
 struct OfficeMapView: View {
@@ -18,6 +16,9 @@ struct OfficeMapView: View {
     @State private var selectedElement: MapElement? = nil // Элемент для редактирования
     @State private var scale: CGFloat = 1.0        // Текущий масштаб карты
     private let apiUtils = ApiUtils()
+    
+    @State private var flag_redMap = false
+    
 
     var body: some View {
         ZStack {
@@ -33,7 +34,7 @@ struct OfficeMapView: View {
                         .frame(width: element.size.width, height: element.size.height)
                         .overlay(
                             Rectangle()
-                                .stroke(Color.gray, lineWidth: 2) // Обводка
+                                .stroke(Color.black, lineWidth: 2) // Обводка
                         )
 
                     Text(element.name)
@@ -92,38 +93,52 @@ struct OfficeMapView: View {
             // Кнопка добавления элемента
             VStack {
                 Spacer()
-                Button(action: {
-                    isAddingElement.toggle()
-                }) {
-                    Text("Добавить элемент")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(8)
-                }
-                .padding()
-                Button(action: {
-                    let officeMap = OfficeMap(id: "customMapID123", elements: elements)
-                    self.apiUtils.saveOfficeMapToFirestore(map: officeMap) { result in
-                        switch result {
-                        case .success:
-                            print("Карта успешно сохранена")
-                        case .failure(let error):
-                            print("Ошибка при сохранении карты: \(error.localizedDescription)")
-                        }
+                HStack {
+                    
+                    Button(action: {
+                        isAddingElement.toggle()
+                    }) {
+                        Text("Добавить элемент")
+                            .font(.headline)
+                            .foregroundColor(Consts.Colors.black)
+                            .padding()
+                            .background(Consts.Colors.Green_51)
+                            .cornerRadius(8)
                     }
-                }) {
-                    Text("Сохранить карту")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(8)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    
+                    Button(action: {
+                        isAddingElement.toggle()
+                    }) {
+                        
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    
+                    Button(action: {
+                        let officeMap = OfficeMap(id: "customMapID123", elements: elements)
+                        self.apiUtils.saveOfficeMapToFirestore(map: officeMap) { result in
+                            switch result {
+                            case .success:
+                                print("Карта успешно сохранена")
+                            case .failure(let error):
+                                print("Ошибка при сохранении карты: \(error.localizedDescription)")
+                            }
+                        }
+                    }) {
+                        Text("Сохранить карту")
+                            .font(.headline)
+                            .foregroundColor(Consts.Colors.black)
+                            .padding()
+                            .background(Consts.Colors.Green_51)
+                            .cornerRadius(8)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
                 }
-                .padding()
+                .padding(.bottom, 20)
             }
-            .padding(.bottom, 20)
         }
         .onAppear {
             self.apiUtils.getOfficeMapFromFirestore(mapID: "customMapID123") { result in
@@ -145,11 +160,12 @@ struct OfficeMapView: View {
         }
 
         // Меню редактирования элемента
-        .sheet(item: $selectedElement) { element in
-            EditElementView(element: element) { updatedElement in
-                if let index = elements.firstIndex(where: { $0.id == updatedElement.id }) {
-                    elements[index] = updatedElement
-                }
+        .sheet(item: $selectedElement) { selectedElement in
+            if let index = elements.firstIndex(where: { $0.id == selectedElement.id }) {
+                EditElementView(element: $elements[index], onDelete: {
+                    elements.remove(at: index) // Удаляем элемент из списка
+                    self.selectedElement = nil // Закрываем редактор
+                })
             }
         }
     }
@@ -220,8 +236,13 @@ struct AddElementView: View {
                         .cornerRadius(8)
 
                     Rectangle()
-                        .fill(selectedType == .partition ? Color.clear : Color.clear)
+                        .fill(getColor(for: selectedType))
                         .frame(width: width, height: height)
+                        .overlay(
+                            // Добавление чёрной обводки
+                            Rectangle()
+                                .stroke(Color.black, lineWidth: 2)
+                        )
                         .overlay(
                             Text(name.isEmpty ? "Название" : name)
                                 .foregroundColor(.white)
@@ -233,7 +254,6 @@ struct AddElementView: View {
                         )
                 }
                 .padding()
-
                 // Настройка размеров
                 Form {
                     Section(header: Text("Размеры элемента")) {
@@ -261,7 +281,7 @@ struct AddElementView: View {
                     Button("Добавить") {
                         let newElement = MapElement(
                             type: selectedType,
-                            name: name.isEmpty ? "Без названия" : name,
+                            name: name.isEmpty ? "" : name,
                             size: CGSize(width: width, height: height),
                             position: CGPoint(x: 200, y: 200) // Начальная позиция
                         )
@@ -275,6 +295,22 @@ struct AddElementView: View {
                     }
                 }
             }
+        }
+    }
+    
+    // Функция для определения цвета элемента
+    func getColor(for type: ElementType) -> Color {
+        switch type {
+        case .auditorium:
+            return Color.clear // Прозрачный фон
+        case .table:
+            return Color.blue.opacity(0.7) // Цвет для столов
+        case .chair:
+            return Color.green.opacity(0.7) // Цвет для стульев
+        case .partition:
+            return Color.gray.opacity(0.7) // Цвет для перегородок
+        case .computer:
+            return Color.purple.opacity(0.7) // Цвет для компьютеров
         }
     }
 }
@@ -299,33 +335,40 @@ enum ElementType: String, Codable, CaseIterable {
 
 struct EditElementView: View {
     @Environment(\.dismiss) var dismiss
-    @State var element: MapElement // Текущий элемент
-    var onSave: (MapElement) -> Void
+    @State private var selectedType: ElementType
+    @State private var width: CGFloat
+    @State private var height: CGFloat
+    @State private var name: String
+    @Binding var element: MapElement
+    var onDelete: () -> Void
+
+    init(element: Binding<MapElement>, onDelete: @escaping () -> Void) {
+        self._element = element
+        self._selectedType = State(initialValue: element.wrappedValue.type)
+        self._width = State(initialValue: element.wrappedValue.size.width)
+        self._height = State(initialValue: element.wrappedValue.size.height)
+        self._name = State(initialValue: element.wrappedValue.name)
+        self.onDelete = onDelete
+    }
 
     var body: some View {
         NavigationView {
             VStack {
-                Picker("Тип элемента", selection: $element.type) {
-                    Text("Кабинет").tag(ElementType.auditorium)
-                    Text("Стол").tag(ElementType.table)
-                    Text("Стул").tag(ElementType.chair)
-                    Text("Перегородка").tag(ElementType.partition)
-                    Text("Компьютер").tag(ElementType.computer)
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-
-                // Превью с текущими размерами
+                // Превью элемента
                 ZStack {
                     Color.gray.opacity(0.2)
                         .frame(height: 200)
                         .cornerRadius(8)
 
                     Rectangle()
-                        .fill(getColor(for: element.type))
-                        .frame(width: element.size.width, height: element.size.height)
+                        .fill(getColor(for: selectedType))
+                        .frame(width: width, height: height)
                         .overlay(
-                            Text(element.name.isEmpty ? "Название" : element.name)
+                            Rectangle()
+                                .stroke(Color.black, lineWidth: 2)
+                        )
+                        .overlay(
+                            Text(name.isEmpty ? "Название" : name)
                                 .foregroundColor(.white)
                                 .font(.caption)
                                 .padding(4)
@@ -338,30 +381,58 @@ struct EditElementView: View {
 
                 // Настройка размеров
                 Form {
+                    Section(header: Text("Тип элемента")) {
+                        Picker("Тип элемента", selection: $selectedType) {
+                            Text("Аудитория").tag(ElementType.auditorium)
+                            Text("Стол").tag(ElementType.table)
+                            Text("Стул").tag(ElementType.chair)
+                            Text("Перегородка").tag(ElementType.partition)
+                            Text("Компьютер").tag(ElementType.computer)
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                    }
+
                     Section(header: Text("Размеры элемента")) {
                         HStack {
                             Text("Ширина:")
-                            Slider(value: $element.size.width, in: 50...300, step: 10)
-                            Text("\(Int(element.size.width))")
+                            Slider(value: $width, in: 50...300, step: 10)
+                            Text("\(Int(width))")
                         }
                         HStack {
                             Text("Высота:")
-                            Slider(value: $element.size.height, in: 50...300, step: 10)
-                            Text("\(Int(element.size.height))")
+                            Slider(value: $height, in: 50...300, step: 10)
+                            Text("\(Int(height))")
                         }
                     }
 
-                    // Ввод названия элемента
                     Section(header: Text("Название элемента")) {
-                        TextField("Введите название", text: $element.name)
+                        TextField("Введите название", text: $name)
                     }
                 }
+
+                Spacer()
+
+                // Кнопка удаления
+                Button(action: {
+                    onDelete()
+                    dismiss()
+                }) {
+                    Text("Удалить элемент")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.red)
+                        .cornerRadius(8)
+                }
+                .padding()
             }
             .navigationTitle("Редактировать элемент")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Сохранить") {
-                        onSave(element)
+                        element.type = selectedType
+                        element.size = CGSize(width: width, height: height)
+                        element.name = name
                         dismiss()
                     }
                 }
@@ -374,19 +445,13 @@ struct EditElementView: View {
         }
     }
 
-    // Функция получения цвета
-    func getColor(for type: ElementType) -> Color {
+    private func getColor(for type: ElementType) -> Color {
         switch type {
-        case .auditorium:
-            return Color.clear
-        case .table:
-            return Color.blue.opacity(0.7)
-        case .chair:
-            return Color.green.opacity(0.7)
-        case .partition:
-            return Color.gray.opacity(0.7)
-        case .computer:
-            return Color.purple.opacity(0.7)
+        case .auditorium: return Color.clear
+        case .table: return Color.blue.opacity(0.7)
+        case .chair: return Color.green.opacity(0.7)
+        case .partition: return Color.gray.opacity(0.7)
+        case .computer: return Color.purple.opacity(0.7)
         }
     }
 }

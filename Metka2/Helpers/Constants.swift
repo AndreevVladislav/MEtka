@@ -13,9 +13,6 @@ public class Consts {
     /// Цвета
     public struct Colors {
         
-        /// Фон
-        public static let background: Color = Color.gray
-        
         /// красный ошибка
         public static let error: Color = Color.red
         
@@ -32,7 +29,7 @@ public class Consts {
         public static let Green_11: Color = Color("Green_11")
         
         /// Green_51
-        public static let Green_11: Color = Color("Green_51")
+        public static let Green_51: Color = Color("Green_51")
         
         
     }
@@ -58,6 +55,9 @@ public class Consts {
         public static let ic_search_NoActive: Image = Image("ic_search_NoActive");
         
         public static let Logo: Image = Image("Logo");
+        
+        public static let avatar: Image = Image("avatar");
+        
     }
     
     public struct Fonts {

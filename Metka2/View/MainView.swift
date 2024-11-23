@@ -32,13 +32,14 @@ struct MainView: View {
                 Spacer()
                 // Навигационный бар
                 UC_Navigation()
+                    .frame(height: 48)
             }
         }
         .onAppear {
             self.env_Nav.Tab_Selection = 0 // Устанавливаем начальный таб
-            self.flag_showLogin = true
+            self.flag_showLogin = false
         }
-        .background(Consts.Colors.background)
+        .background(Consts.Colors.Gray_C9)
         .fullScreenCover(isPresented: $flag_showLogin) {
             LoginView()
         }

@@ -29,7 +29,7 @@ struct UC_Navigation: View {
                                 .scaledToFit()
                         }
                     }
-                    .frame(width: 24, height: 24)
+                    .frame(width: 30, height: 30)
                 }
             }
             .frame(maxWidth: .infinity)
@@ -50,7 +50,7 @@ struct UC_Navigation: View {
                                 .scaledToFit()
                         }
                     }
-                    .frame(width: 24, height: 24)
+                    .frame(width: 30, height: 30)
                 }
             }
             .frame(maxWidth: .infinity)
@@ -71,10 +71,11 @@ struct UC_Navigation: View {
                                 .scaledToFit()
                         }
                     }
-                    .frame(width: 24, height: 24)
+                    .frame(width: 30, height: 30)
                 }
             }
             .frame(maxWidth: .infinity)
         }
+        .background(Consts.Colors.Gray_C9)
     }
 }

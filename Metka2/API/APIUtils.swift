@@ -294,6 +294,77 @@ class ApiUtils: ObservableObject {
         }
     }
     
+    func saveCabinetToFirestore(cabinet: ModelCabinet, completion: @escaping (Result<Void, Error>) -> Void) {
+        let db = Firestore.firestore()
+        let cabinetCollection = db.collection("cabinets")
+
+        do {
+            // Преобразуем Cabinet в словарь
+            let cabinetData = try Firestore.Encoder().encode(cabinet)
+
+            // Сохраняем в Firestore
+            cabinetCollection.document(String(cabinet.id ?? "\(UUID())")).setData(cabinetData) { error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.success(()))
+                }
+            }
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+//    func loadCabinetFromFirestore(cabinetID: Int, completion: @escaping (Result<ModelCabinetSave, Error>) -> Void) {
+//        let db = Firestore.firestore()
+//        let cabinetCollection = db.collection("cabinets")
+//
+//        cabinetCollection.document(String(cabinetID)).getDocument { document, error in
+//            if let error = error {
+//                completion(.failure(error))
+//                return
+//            }
+//
+//            guard let document = document, document.exists,
+//                  let data = document.data() else {
+//                completion(.failure(NSError(domain: "CabinetError", code: 404, userInfo: [NSLocalizedDescriptionKey: "Кабинет не найден."])))
+//                return
+//            }
+//
+//            do {
+//                let cabinet = try Firestore.Decoder().decode(ModelCabinetSave.self, from: data)
+//                completion(.success(cabinet))
+//            } catch {
+//                completion(.failure(error))
+//            }
+//        }
+//    }
+    
+    func loadCabinetFromFirestore(cabinetID: Int, completion: @escaping (Result<ModelCabinet, Error>) -> Void) {
+        let db = Firestore.firestore()
+        let collection = db.collection("cabinets")
+        
+        // Выполняем запрос с условием `techID == techID`
+        collection.whereField("cabinetID", isEqualTo: cabinetID).getDocuments { snapshot, error in
+            if let error = error {
+                completion(.failure(error)) // Возвращаем ошибку, если запрос не удался
+                return
+            }
+            
+            guard let documents = snapshot?.documents, let firstDoc = documents.first else {
+                completion(.failure(NSError(domain: "Firestore", code: 404, userInfo: [NSLocalizedDescriptionKey: "Technique not found"])))
+                return
+            }
+            
+            do {
+                let technique = try firstDoc.data(as: ModelCabinet.self) // Декодируем документ в модель `ModelTechnique`
+                completion(.success(technique)) // Успешно возвращаем технику
+            } catch {
+                completion(.failure(error)) // Ошибка при декодировании
+            }
+        }
+    }
+    
 }
 
 // Модель для карты

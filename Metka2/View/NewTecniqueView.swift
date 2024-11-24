@@ -1,5 +1,5 @@
 //
-//  NewProfileView.swift
+//  NewTecniqueView.swift
 //  Metka2
 //
 //  Created by Vladislav Andreev on 24.11.2024.
@@ -8,40 +8,35 @@
 import Foundation
 import SwiftUI
 
-struct NewProfileView: View {
+struct NewTecniqueView: View {
     
     private enum E_Field: Hashable {
         
-        case clientID
+        case techID
         
-        case avatar
+        case name
         
-        case email
+        case type
         
-        case position
+        case os
         
-        case grade
+        case made
         
-        case fio
+        case status
         
-        case password
     }
     
-    @State private var string_clientID: String = ""
+    @State private var string_techID: String = ""
     
-    @State private var string_avatar: String = ""
+    @State private var string_name: String = ""
     
-    @State private var string_email: String = ""
+    @State private var string_type: String = ""
     
-    @State private var string_position: String = ""
+    @State private var string_os: String = ""
     
-    @State private var string_grade: String = ""
+    @State private var string_made: String = ""
     
-    @State private var string_fio: String = ""
-    
-    @State private var string_password: String = ""
-    
-    @State private var flag_isAdmin: Bool = false
+    @State private var string_status: String = ""
     
     /// Активное поле ввода
     @FocusState private var focusState: E_Field?
@@ -53,19 +48,16 @@ struct NewProfileView: View {
             VStack {
                 VStack(spacing: 20) {
                     
-                    Toggle(isOn: $flag_isAdmin) {
-                        Text("Администатор")
-                    }
-                    .toggleStyle(.switch)
-                    TextField("", text: self.$string_clientID)
+                    
+                    TextField("", text: self.$string_techID)
                         .padding(15)
                         .disableAutocorrection(true)
-                        .focused(self.$focusState, equals: .clientID)
+                        .focused(self.$focusState, equals: .techID)
                         .font(Font.custom(Consts.Fonts.Regular, size: 14))
                         .foregroundColor(Consts.Colors.black)
-                        .placeholder(when: self.string_clientID.isEmpty) {
+                        .placeholder(when: self.string_techID.isEmpty) {
                             ZStack {
-                                Text(verbatim: " ClientID ")
+                                Text(verbatim: " techID ")
                                     .padding(15)
                                     .font(Font.custom(Consts.Fonts.Regular, size: 14))
                                     .foregroundColor(Consts.Colors.Gray_17)
@@ -83,18 +75,18 @@ struct NewProfileView: View {
                             
                         )
                         .onTapGesture {
-                            self.focusState = .clientID
+                            self.focusState = .techID
                         }
                     
-                    TextField("", text: self.$string_avatar)
+                    TextField("", text: self.$string_name)
                         .padding(15)
                         .disableAutocorrection(true)
-                        .focused(self.$focusState, equals: .avatar)
+                        .focused(self.$focusState, equals: .name)
                         .font(Font.custom(Consts.Fonts.Regular, size: 14))
                         .foregroundColor(Consts.Colors.black)
-                        .placeholder(when: self.string_avatar.isEmpty) {
+                        .placeholder(when: self.string_name.isEmpty) {
                             ZStack {
-                                Text(verbatim: " avatar ")
+                                Text(verbatim: " name ")
                                     .padding(15)
                                     .font(Font.custom(Consts.Fonts.Regular, size: 14))
                                     .foregroundColor(Consts.Colors.Gray_17)
@@ -112,18 +104,18 @@ struct NewProfileView: View {
                             
                         )
                         .onTapGesture {
-                            self.focusState = .avatar
+                            self.focusState = .name
                         }
                     
-                    TextField("", text: self.$string_email)
+                    TextField("", text: self.$string_type)
                         .padding(15)
                         .disableAutocorrection(true)
-                        .focused(self.$focusState, equals: .email)
+                        .focused(self.$focusState, equals: .type)
                         .font(Font.custom(Consts.Fonts.Regular, size: 14))
                         .foregroundColor(Consts.Colors.black)
-                        .placeholder(when: self.string_email.isEmpty) {
+                        .placeholder(when: self.string_type.isEmpty) {
                             ZStack {
-                                Text(verbatim: " email ")
+                                Text(verbatim: " type ")
                                     .padding(15)
                                     .font(Font.custom(Consts.Fonts.Regular, size: 14))
                                     .foregroundColor(Consts.Colors.Gray_17)
@@ -141,18 +133,18 @@ struct NewProfileView: View {
                             
                         )
                         .onTapGesture {
-                            self.focusState = .email
+                            self.focusState = .type
                         }
                     
-                    TextField("", text: self.$string_position)
+                    TextField("", text: self.$string_os)
                         .padding(15)
                         .disableAutocorrection(true)
-                        .focused(self.$focusState, equals: .position)
+                        .focused(self.$focusState, equals: .os)
                         .font(Font.custom(Consts.Fonts.Regular, size: 14))
                         .foregroundColor(Consts.Colors.black)
-                        .placeholder(when: self.string_position.isEmpty) {
+                        .placeholder(when: self.string_os.isEmpty) {
                             ZStack {
-                                Text(verbatim: " position ")
+                                Text(verbatim: " os ")
                                     .padding(15)
                                     .font(Font.custom(Consts.Fonts.Regular, size: 14))
                                     .foregroundColor(Consts.Colors.Gray_17)
@@ -170,18 +162,18 @@ struct NewProfileView: View {
                             
                         )
                         .onTapGesture {
-                            self.focusState = .position
+                            self.focusState = .os
                         }
                     
-                    TextField("", text: self.$string_grade)
+                    TextField("", text: self.$string_status)
                         .padding(15)
                         .disableAutocorrection(true)
-                        .focused(self.$focusState, equals: .grade)
+                        .focused(self.$focusState, equals: .status)
                         .font(Font.custom(Consts.Fonts.Regular, size: 14))
                         .foregroundColor(Consts.Colors.black)
-                        .placeholder(when: self.string_grade.isEmpty) {
+                        .placeholder(when: self.string_status.isEmpty) {
                             ZStack {
-                                Text(verbatim: " grade ")
+                                Text(verbatim: " status ")
                                     .padding(15)
                                     .font(Font.custom(Consts.Fonts.Regular, size: 14))
                                     .foregroundColor(Consts.Colors.Gray_17)
@@ -199,18 +191,18 @@ struct NewProfileView: View {
                             
                         )
                         .onTapGesture {
-                            self.focusState = .grade
+                            self.focusState = .status
                         }
                     
-                    TextField("", text: self.$string_fio)
+                    TextField("", text: self.$string_made)
                         .padding(15)
                         .disableAutocorrection(true)
-                        .focused(self.$focusState, equals: .fio)
+                        .focused(self.$focusState, equals: .made)
                         .font(Font.custom(Consts.Fonts.Regular, size: 14))
                         .foregroundColor(Consts.Colors.black)
-                        .placeholder(when: self.string_fio.isEmpty) {
+                        .placeholder(when: self.string_made.isEmpty) {
                             ZStack {
-                                Text(verbatim: " fio ")
+                                Text(verbatim: " made ")
                                     .padding(15)
                                     .font(Font.custom(Consts.Fonts.Regular, size: 14))
                                     .foregroundColor(Consts.Colors.Gray_17)
@@ -228,67 +220,15 @@ struct NewProfileView: View {
                             
                         )
                         .onTapGesture {
-                            self.focusState = .fio
+                            self.focusState = .made
                         }
                     
-                    TextField("", text: self.$string_password)
-                        .padding(15)
-                        .disableAutocorrection(true)
-                        .focused(self.$focusState, equals: .password)
-                        .font(Font.custom(Consts.Fonts.Regular, size: 14))
-                        .foregroundColor(Consts.Colors.black)
-                        .placeholder(when: self.string_password.isEmpty) {
-                            ZStack {
-                                Text(verbatim: " password ")
-                                    .padding(15)
-                                    .font(Font.custom(Consts.Fonts.Regular, size: 14))
-                                    .foregroundColor(Consts.Colors.Gray_17)
-                            }
-                        }
-                        .background(
-                            ZStack {
-                                Rectangle()
-                                    .fill(Consts.Colors.Gray_C9)
-                                    .cornerRadius(20)
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Consts.Colors.black, lineWidth: 1)
-                            }
-                            
-                            
-                        )
-                        .onTapGesture {
-                            self.focusState = .password
-                        }
+                    
                     
                     Button(action: {
-                        createUser() 
+                        createTech()
                     }) {
                         Text("Сохранить")
-                            .font(Font.custom(Consts.Fonts.Regular, size: 24))
-                            .foregroundColor(Consts.Colors.black)
-                            .multilineTextAlignment(.center)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .frame(height: 58)
-                            .background(Consts.Colors.Gray_C9)
-                            .cornerRadius(20)
-                    }
-                    .background(
-                        ZStack {
-                            Rectangle()
-                                .fill(Consts.Colors.Gray_C9)
-                                .cornerRadius(58)
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Consts.Colors.black, lineWidth: 2)
-                            
-                            
-                        }
-                    )
-                    
-                    Button(action: {
-                        let nfcWriter = NFCWriter()
-                        nfcWriter.startSession(withText: String(string_clientID))
-                    }) {
-                        Text("записать на NFC")
                             .font(Font.custom(Consts.Fonts.Regular, size: 24))
                             .foregroundColor(Consts.Colors.black)
                             .multilineTextAlignment(.center)
@@ -315,31 +255,25 @@ struct NewProfileView: View {
         }
     }
     
-    private func createUser() {
-        var isAdmin = 0
-        if flag_isAdmin {
-            isAdmin = 1
-        } else {
-            isAdmin = 0
-        }
-        let userModel = UserModel(
-            clientID: Int(string_clientID) ?? 0,
-            avatar: "https://example.com/avatar.png",
-            email: string_email,
-            position: string_position,
-            grade: string_grade,
-            cabinetID: 0,
-            fio: string_fio,
+    private func createTech() {
+        let technique = ModelTechnique(
+            id: nil,
+            techID: Int(string_techID) ?? 0,
+            name: string_name,
+            type: string_type,
+            os: string_os,
+            made: string_made,
+            status: string_status,
             officeID: 0,
-            flag_isAdmin: isAdmin
+            cabinetID: 0
         )
         
-        self.apiUtils.registerUser(email: userModel.email, password: string_password, userModel: userModel) { result in
+        self.apiUtils.saveTechniqueToFirestore(technique: technique) { result in
             switch result {
             case .success:
-                print("Пользователь успешно зарегистрирован и сохранен в Firestore")
+                print("Technique успешно сохранена в Firestore")
             case .failure(let error):
-                print("Ошибка при регистрации пользователя: \(error.localizedDescription)")
+                print("Ошибка при сохранении техники в Firestore: \(error.localizedDescription)")
             }
         }
     }

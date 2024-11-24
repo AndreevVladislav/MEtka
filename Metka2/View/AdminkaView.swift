@@ -32,7 +32,6 @@ struct AdminkaView: View {
                 // Белый блок
                 VStack(alignment: .center) {
                     
-                    
                     ZStack {
                         VStack(spacing: 50) {
                             Button(action: {
@@ -60,7 +59,7 @@ struct AdminkaView: View {
                             )
                             
                             Button(action: {
-                                
+                                self.env_Nav.Tab_Selection = 8
                             }) {
                                 Text("Сотрудники")
                                     .font(Font.custom(Consts.Fonts.Regular, size: 24))
@@ -84,7 +83,7 @@ struct AdminkaView: View {
                             )
                             
                             Button(action: {
-                                
+                                self.env_Nav.Tab_Selection = 9
                             }) {
                                 Text("Оборудование")
                                     .font(Font.custom(Consts.Fonts.Regular, size: 24))

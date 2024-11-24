@@ -29,9 +29,15 @@ struct ProfileView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Consts.Images.avatar
-                    .resizable()
-                    .scaledToFit()
+//                Consts.Images.avatar
+//                    .resizable()
+//                    .scaledToFit()
+                
+                if let image = decodeBase64ToImage(base64String: self.userInfoManager.avatar ?? "") {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                }
                 Spacer()
             }
             
@@ -218,6 +224,15 @@ struct ProfileView: View {
             LoginView()
         }
     }
+    
+    func decodeBase64ToImage(base64String: String) -> UIImage? {
+         guard let data = Data(base64Encoded: base64String),
+               let image = UIImage(data: data) else {
+             return nil
+         }
+         return image
+     }
+ 
       
     private func getFirstName(from fullName: String) -> String? {
         // Разбиваем строку по пробелу

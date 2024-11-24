@@ -22,7 +22,8 @@ struct OfficeMapView: View {
     
     @State private var showAlert = false
     
-
+    @ObservedObject var tecniqueManager = TecniqueManager.shared
+    
     var body: some View {
         ZStack {
             // Фон карты
@@ -90,22 +91,24 @@ struct OfficeMapView: View {
                         }
                         .padding(.bottom, 10)
                         
-                        Button(action: {
-                            flag_redMap = true
-                            elementsSave = elements
-                        }) {
-                            Image(systemName: "square.and.pencil.circle")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(Consts.Colors.Green_51)
+                        if !flag_redMap && UserInfoManager.shared.flag_isAdmin == 1 {
+                            Button(action: {
+                                flag_redMap = true
+                                elementsSave = elements
+                            }) {
+                                Image(systemName: "square.and.pencil.circle")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(Consts.Colors.Green_51)
+                            }
                         }
                     }
                     .padding()
                 }
                 Spacer()
-
+                
             }
-
+            
             // Кнопка добавления элемента
             
             VStack {
@@ -185,9 +188,9 @@ struct OfficeMapView: View {
                     })
                 }
             } else {
-                VStack {
-                    Text("hgjvghvjh")
-                }
+                
+                Text("name \(selectedElement.name)")
+                Text("cabinetID \(selectedElement.cabinetID)")
             }
         }
         .alert("Сохранить изменения?", isPresented: $showAlert) {
@@ -238,15 +241,18 @@ struct AddElementView: View {
     // Параметры размера нового элемента
     @State private var width: CGFloat = 100
     @State private var height: CGFloat = 100
-    // Название нового элемента
-    @State private var name: String = ""
     // Позиция элемента в предварительном просмотре
     @State private var previewPosition: CGPoint = CGPoint(x: 150, y: 150)
+    @State private var name: String = ""
+    @State private var cabinetID: String = ""
+    @State private var type: String = ""
 
     // Замыкание, вызываемое при добавлении нового элемента
     var onAdd: (MapElement) -> Void
 
     @State private var selectedType: ElementType = .auditorium // Выбранный тип элемента
+    private let apiUtils = ApiUtils()
+
 
     var body: some View {
         NavigationView {
@@ -272,7 +278,7 @@ struct AddElementView: View {
                     .cornerRadius(8)
                 }
                 .padding()
-
+                Form {
                 // Превью элемента
                 ZStack {
                     Color.gray.opacity(0.2)
@@ -299,7 +305,7 @@ struct AddElementView: View {
                 }
                 .padding()
                 // Настройка размеров
-                Form {
+                
                     Section(header: Text("Размеры элемента")) {
                         HStack {
                             Text("Ширина:")
@@ -317,7 +323,24 @@ struct AddElementView: View {
                     Section(header: Text("Название элемента")) {
                         TextField("Введите название", text: $name)
                     }
+                    
+                    Section(header: Text("Информация")) {
+                        TextField("ID (число)", text: $cabinetID)
+                            .keyboardType(.numberPad)
+                        TextField("Название элемента", text: $name)
+                        TextField("Тип", text: $type)
+                    }
+                    
+                    Section(header: Text("")) {
+                        VStack {
+                            Spacer()
+                        }
+                        .frame(height: 300)
+                    }
+                    
+                   
                 }
+                
             }
             .navigationTitle("Добавить элемент")
             .toolbar {
@@ -327,10 +350,12 @@ struct AddElementView: View {
                             type: selectedType,
                             name: name.isEmpty ? "" : name,
                             size: CGSize(width: width, height: height),
-                            position: CGPoint(x: 200, y: 200) // Начальная позиция
+                            position: CGPoint(x: 200, y: 200),
+                            cabinetID: Int(cabinetID) ?? 0// Начальная позиция
                         )
                         onAdd(newElement)
-                        dismiss()
+                        addToFirestore()
+                        
                     }
                 }
                 ToolbarItem(placement: .cancellationAction) {
@@ -339,7 +364,10 @@ struct AddElementView: View {
                     }
                 }
             }
+            .ignoresSafeArea()
+            Spacer()
         }
+        .ignoresSafeArea()
     }
     
     // Функция для определения цвета элемента
@@ -357,6 +385,29 @@ struct AddElementView: View {
             return Color.purple.opacity(0.7) // Цвет для компьютеров
         }
     }
+    
+    private func addToFirestore() {
+        guard let elementID = Int(cabinetID), !name.isEmpty, !type.isEmpty else { return }
+        
+        let newCabinet = ModelCabinet(
+            cabinetID: elementID,
+            name: name,
+            type: type,
+            peoples: [], // Пустой массив пользователей
+            techniques: [] // Пустой массив техники
+        )
+        
+        self.apiUtils.saveCabinetToFirestore(cabinet: newCabinet) { result in
+            switch result {
+            case .success:
+                print("Кабинет успешно сохранён!")
+                dismiss()
+            case .failure(let error):
+                print("Ошибка сохранения: \(error.localizedDescription)")
+            }
+        }
+    }
+    
 }
 
 // Модель данных для элемента карты
@@ -366,6 +417,7 @@ struct MapElement: Codable, Identifiable {
     var name: String // Название элемента
     var size: CGSize // Размеры элемента
     var position: CGPoint // Позиция элемента на карте
+    var cabinetID: Int
 }
 
 // Типы элементов карты

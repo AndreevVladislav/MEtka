@@ -56,28 +56,7 @@ struct MyTechnique: View {
             }
         }
         .onAppear {
-            // Добавляем тестовую технику
-//            let technique = ModelTechnique(
-//                id: nil,
-//                techID: 123,
-//                name: "MacBook Pro",
-//                type: "Laptop",
-//                os: "macOS",
-//                made: "Apple",
-//                status: "In use",
-//                officeID: 1,
-//                cabinetID: 2
-//            )
-//
-//            self.apiUtils.saveTechniqueToFirestore(technique: technique) { result in
-//                switch result {
-//                case .success:
-//                    print("Technique успешно сохранена в Firestore")
-//                case .failure(let error):
-//                    print("Ошибка при сохранении техники в Firestore: \(error.localizedDescription)")
-//                }
-//            }
-            
+           
             self.apiUtils.fetchAllTechniques { result in
                 switch result {
                 case .success(let techniques):

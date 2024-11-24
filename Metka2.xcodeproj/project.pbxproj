@@ -51,6 +51,10 @@
 		837590F12CF1EF8C0027BC2B /* UC_TechniqueItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590F02CF1EF8C0027BC2B /* UC_TechniqueItem.swift */; };
 		837590F32CF1EFB10027BC2B /* ModelTechnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837590F22CF1EFB10027BC2B /* ModelTechnique.swift */; };
 		83F1DEBB2CF28E1400C63623 /* NewProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1DEBA2CF28E1400C63623 /* NewProfileView.swift */; };
+		83F1DEBD2CF29D3700C63623 /* NewTecniqueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1DEBC2CF29D3700C63623 /* NewTecniqueView.swift */; };
+		83F1DEBF2CF2CF2000C63623 /* ModelCabinet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1DEBE2CF2CF2000C63623 /* ModelCabinet.swift */; };
+		83F1DEC12CF2EF9600C63623 /* NFCWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1DEC02CF2EF9600C63623 /* NFCWriter.swift */; };
+		83F1DEC32CF2F2E600C63623 /* CabinetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1DEC22CF2F2E600C63623 /* CabinetManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +99,10 @@
 		837590F02CF1EF8C0027BC2B /* UC_TechniqueItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UC_TechniqueItem.swift; sourceTree = "<group>"; };
 		837590F22CF1EFB10027BC2B /* ModelTechnique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTechnique.swift; sourceTree = "<group>"; };
 		83F1DEBA2CF28E1400C63623 /* NewProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileView.swift; sourceTree = "<group>"; };
+		83F1DEBC2CF29D3700C63623 /* NewTecniqueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTecniqueView.swift; sourceTree = "<group>"; };
+		83F1DEBE2CF2CF2000C63623 /* ModelCabinet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCabinet.swift; sourceTree = "<group>"; };
+		83F1DEC02CF2EF9600C63623 /* NFCWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWriter.swift; sourceTree = "<group>"; };
+		83F1DEC22CF2F2E600C63623 /* CabinetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +182,7 @@
 				8375905A2CF11B2B0027BC2B /* ProfileView.swift */,
 				837590DA2CF18D870027BC2B /* AdminkaView.swift */,
 				83F1DEBA2CF28E1400C63623 /* NewProfileView.swift */,
+				83F1DEBC2CF29D3700C63623 /* NewTecniqueView.swift */,
 				8375905C2CF11B420027BC2B /* MapView.swift */,
 				8375905E2CF11B5D0027BC2B /* SearchView.swift */,
 				837590CB2CF15FE90027BC2B /* ShakeView.swift */,
@@ -193,6 +202,7 @@
 				837590632CF11C590027BC2B /* Constants.swift */,
 				8375904A2CF11A020027BC2B /* Assets.xcassets */,
 				837590CF2CF167450027BC2B /* NFCReader.swift */,
+				83F1DEC02CF2EF9600C63623 /* NFCWriter.swift */,
 				8368E6242CF2257200F52DDE /* Adminka */,
 			);
 			path = Helpers;
@@ -249,9 +259,11 @@
 			isa = PBXGroup;
 			children = (
 				837590DD2CF195560027BC2B /* UserModel.swift */,
+				83F1DEBE2CF2CF2000C63623 /* ModelCabinet.swift */,
 				837590F22CF1EFB10027BC2B /* ModelTechnique.swift */,
 				837590E42CF1A67A0027BC2B /* UserInfoManager.swift */,
 				8368E6202CF20C3100F52DDE /* TecniqueManager.swift */,
+				83F1DEC22CF2F2E600C63623 /* CabinetManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -370,9 +382,11 @@
 				837590D42CF178210027BC2B /* MyOffice.swift in Sources */,
 				837590DB2CF18D870027BC2B /* AdminkaView.swift in Sources */,
 				837590E72CF1BD030027BC2B /* LoadingView.swift in Sources */,
+				83F1DEC32CF2F2E600C63623 /* CabinetManager.swift in Sources */,
 				837590F12CF1EF8C0027BC2B /* UC_TechniqueItem.swift in Sources */,
 				8375905D2CF11B420027BC2B /* MapView.swift in Sources */,
 				837590CE2CF161390027BC2B /* ShakeGesture.swift in Sources */,
+				83F1DEBD2CF29D3700C63623 /* NewTecniqueView.swift in Sources */,
 				837590592CF11AEE0027BC2B /* Env_Nav.swift in Sources */,
 				8375905F2CF11B5D0027BC2B /* SearchView.swift in Sources */,
 				837590BE2CF13E580027BC2B /* Ext_View.swift in Sources */,
@@ -384,11 +398,13 @@
 				837590552CF11A9B0027BC2B /* MainView.swift in Sources */,
 				837590512CF11A020027BC2B /* Metka2App.swift in Sources */,
 				837590E52CF1A67A0027BC2B /* UserInfoManager.swift in Sources */,
+				83F1DEC12CF2EF9600C63623 /* NFCWriter.swift in Sources */,
 				8368E6212CF20C3100F52DDE /* TecniqueManager.swift in Sources */,
 				837590692CF121E40027BC2B /* LoginView.swift in Sources */,
 				837590DE2CF195560027BC2B /* UserModel.swift in Sources */,
 				837590E32CF196920027BC2B /* APIUtils.swift in Sources */,
 				837590642CF11C590027BC2B /* Constants.swift in Sources */,
+				83F1DEBF2CF2CF2000C63623 /* ModelCabinet.swift in Sources */,
 				83F1DEBB2CF28E1400C63623 /* NewProfileView.swift in Sources */,
 				837590CC2CF15FE90027BC2B /* ShakeView.swift in Sources */,
 				837590672CF1204C0027BC2B /* MapsRedView.swift in Sources */,
@@ -535,9 +551,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,9 +591,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

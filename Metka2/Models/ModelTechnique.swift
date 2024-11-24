@@ -23,12 +23,12 @@ struct ModelTechnique: Codable, Identifiable {
 struct ModelTechniqueSave: Codable, Identifiable {
     
     var id: UUID = UUID()
-    var techID: Int
-    var name: String
-    var type: String
-    var os: String
-    var made: String
-    var status: String
-    var officeID: Int
-    var cabinetID: Int
+    var techID: Int?
+    var name: String?
+    var type: String?
+    var os: String?
+    var made: String?
+    var status: String?
+    var officeID: Int?
+    var cabinetID: Int?
 }

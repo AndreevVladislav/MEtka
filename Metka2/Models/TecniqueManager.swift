@@ -10,7 +10,13 @@ import Combine
 
 class TecniqueManager: ObservableObject {
     
-    static let shared = UserInfoManager()
+    static let shared = TecniqueManager()
     
     @Published var list_Tecnique: [ModelTechniqueSave] = []
+    
+    @Published var flag_openTech = false
+    
+    @Published var selectTech = ModelTechniqueSave()
+    
+    @Published var fake_email = ""
 }

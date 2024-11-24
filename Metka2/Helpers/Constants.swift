@@ -62,6 +62,10 @@ public class Consts {
         
         public static let ic_buttonBack: Image = Image("ic_buttonBack");
         
+        public static let ic_mobile: Image = Image("ic_mobile");
+        
+        public static let ic_pc: Image = Image("ic_pc");
+        
         
     }
     
